@@ -13,28 +13,32 @@ const messageDiv = document.getElementById("message");
 
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            if (user.emailVerified) {
-                messageDiv.textContent = "Login successful! Redirecting...";
-                messageDiv.className = "text-success";
-                setTimeout(() => {
-                    window.location.href = "index.html";
-                }, 2000);
-            } else {
-                messageDiv.textContent = "Please verify your email before logging in.";
-                messageDiv.className = "text-danger";
-            }
+            user.reload() // Force refresh of user state
+                .then(() => {
+                    if (user.emailVerified) {
+                        messageDiv.textContent = "Login successful! Redirecting...";
+                        messageDiv.className = "text-success";
+                        setTimeout(() => {
+                            window.location.href = "index.html";
+                        }, 2000);
+                    } else {
+                        messageDiv.textContent = "Please verify your email before logging in.";
+                        messageDiv.className = "text-danger";
+                    }
+                });
         })
         .catch((error) => {
             messageDiv.textContent = error.message;
             messageDiv.className = "text-danger";
         });
 });
+
 
 // Register event
 registerButton.addEventListener("click", () => {
