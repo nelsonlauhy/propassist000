@@ -1,17 +1,16 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 import { firebaseConfig } from "./firebaseConfig.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Get form elements
+// Login event
 const loginForm = document.getElementById("loginForm");
 const registerButton = document.getElementById("registerButton");
 const messageDiv = document.getElementById("message");
 
-// Login event
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
@@ -23,7 +22,6 @@ loginForm.addEventListener("submit", (e) => {
             if (user.emailVerified) {
                 messageDiv.textContent = "Login successful! Redirecting...";
                 messageDiv.className = "text-success";
-                // Redirect to your dashboard or another page
                 setTimeout(() => {
                     window.location.href = "index.html";
                 }, 2000);
@@ -52,12 +50,20 @@ registerButton.addEventListener("click", () => {
                     messageDiv.className = "text-success";
                 })
                 .catch((error) => {
-                    messageDiv.textContent = error.message;
+                    messageDiv.textContent = `Error sending verification email: ${error.message}`;
                     messageDiv.className = "text-danger";
                 });
         })
         .catch((error) => {
-            messageDiv.textContent = error.message;
+            messageDiv.textContent = `Error registering user: ${error.message}`;
             messageDiv.className = "text-danger";
         });
+});
+
+// Check authentication status on page load
+onAuthStateChanged(auth, (user) => {
+    if (window.location.pathname === "/index.html" && !user) {
+        // Redirect to login if not logged in
+        window.location.href = "login.html";
+    }
 });
