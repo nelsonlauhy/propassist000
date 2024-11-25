@@ -1,0 +1,68 @@
+/* General Body Styles */
+body {
+    background-color: #f8f9fa; /* Light Bootstrap gray */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Card Styles */
+.card {
+    border: none; /* Remove default card border */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Card Header Styles */
+.card-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Form Input Fields */
+.form-control {
+    border-radius: 5px; /* Rounded inputs */
+    border: 1px solid #ced4da; /* Light border */
+    padding: 10px; /* Increase padding */
+}
+
+/* Form Buttons */
+.btn {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Card Footer Links */
+.card-footer a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Bootstrap blue for hover */
+}
+
+/* Custom Spacing for Form Fields */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+/* Page Spacing */
+.container {
+    margin-top: 5rem; /* Add space at the top */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+    .container {
+        margin-top: 3rem;
+    }
+}
