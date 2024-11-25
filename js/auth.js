@@ -16,7 +16,7 @@ if (document.getElementById("loginButton")) {
             .then((userCredential) => {
                 const user = userCredential.user;
                 if (user.emailVerified) {
-                    alert("Login successful!");
+                    //alert("Login successful!");
                     window.location.href = "home.html";
                 } else {
                     alert("Please verify your email before logging in.");
