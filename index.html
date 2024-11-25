@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <script type="module" src="js/auth.js" defer></script>
-    <script type="module" src="js/firebaseConfig.js" defer></script>
+    <title>Firebase Login</title>
+    <script type="module" src="./firebaseConfig.js"></script>
+    <script type="module" src="./auth.js"></script>
 </head>
 <body>
-    <h1>Welcome to PropAssist!</h1>
-    <p>You are successfully logged in.</p>
+    <h1>Login Page</h1>
+    <div id="login">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button id="loginButton">Login</button>
+    </div>
+
+    <div id="register">
+        <h2>Register</h2>
+        <input type="email" id="registerEmail" placeholder="Email">
+        <input type="password" id="registerPassword" placeholder="Password">
+        <button id="registerButton">Register</button>
+    </div>
+
+    <div id="verification" style="display: none;">
+        <h2>Email Verification</h2>
+        <p>A verification email has been sent. Please verify your email to proceed.</p>
+    </div>
 </body>
 </html>
+
 
