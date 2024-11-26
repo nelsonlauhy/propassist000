@@ -1,0 +1,57 @@
+/* Navbar */
+.custom-navbar {
+    background-color: #213A65; /* Dark blue */
+    border-bottom: 3px solid #FAC40D; /* Gold line */
+    z-index: 1000; /* Ensure it stays above other elements */
+    position: fixed; /* Keep the navbar fixed at the top */
+    width: 100%; /* Full width */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 56px); /* Full height minus navbar height */
+    position: fixed;
+    top: 56px; /* Navbar height */
+    left: 0;
+    background-color: #747b83; /* Lighter grayish-blue */
+    padding-top: 20px;
+    z-index: 999; /* Sidebar below the navbar */
+}
+
+.sidebar h5 {
+    color: #FAC40D; /* Gold */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar .nav-link {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #FAC40D; /* Gold */
+    color: #213A65; /* Dark blue */
+}
+
+.sidebar .nav-link.active {
+    background-color: #FAC40D; /* Gold */
+    color: #213A65; /* Active link style */
+}
+
+/* Main Content */
+.container {
+    margin-left: 270px; /* Sidebar width */
+    margin-top: 150px; /* Extra margin for navbar */
+}
+
+.custom-welcome {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #213A65; /* Dark blue */
+}

@@ -10,7 +10,8 @@ const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
     if (user && user.emailVerified) {
         // Display the user's email in the welcome message
-        document.getElementById("welcomeTitle").innerText = `Welcome, ${user.email}!`;
+        document.getElementById("userEmail").innerText = user.email;
+        document.getElementById("welcomeMessage").innerText = `Welcome, ${user.email}!`;
     } else {
         // Redirect to login page if not authenticated
         window.location.href = "index.html";
