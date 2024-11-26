@@ -14,7 +14,7 @@
     position: fixed;
     top: 56px; /* Navbar height */
     left: 0;
-    background-color: #747b83; /* Lighter grayish-blue */
+    background-color: #f1f1f1; /* Light grey background */
     padding-top: 20px;
     z-index: 999; /* Sidebar below the navbar */
 }
@@ -26,22 +26,27 @@
 }
 
 .sidebar .nav-link {
-    color: white;
+    color: #4a4a4a !important; /* Force dark grey font color */
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 15px; /* Restore left and right padding */
+    font-size: 1rem;
+    position: relative; /* Needed for pseudo-element */
+    overflow: hidden; /* Ensures pseudo-element stays within bounds */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    border-radius: 0; /* Remove rounded corners */
+    background-color: #f1f1f1; /* Matches sidebar background color */
 }
 
 .sidebar .nav-link:hover {
-    background-color: #FAC40D; /* Gold */
-    color: #213A65; /* Dark blue */
+    background-color: #d7d8da; /* Dark blue background on hover */
+    color: #FAC40D; /* Gold text on hover */
 }
 
 .sidebar .nav-link.active {
-    background-color: #FAC40D; /* Gold */
-    color: #213A65; /* Active link style */
+    background-color: #213A65; /* Dark blue for active link */
+    color: #FAC40D; /* Gold text for active link */
 }
 
 /* Main Content */
@@ -51,7 +56,16 @@
 }
 
 .custom-welcome {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #213A65; /* Dark blue */
+}
+
+body .container {
+    margin-left: 270px; /* Sidebar width */
+    margin-top: 70px !important; /* Forces extra spacing */
+}
+
+body .sidebar {
+    background-color: #f1f1f1 !important; /* Ensure consistent light grey */
 }
