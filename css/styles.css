@@ -1,68 +1,60 @@
-/* General Body Styles */
-body {
-    background-color: #f8f9fa; /* Light Bootstrap gray */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Card Styles */
-.card {
-    border: none; /* Remove default card border */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Card Header Styles */
-.card-header {
-    font-size: 1.25rem;
+/* Login Header (Dark Blue) */
+.custom-header {
+    background-color: #213A65;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
+    border-bottom: none;
 }
 
-/* Form Input Fields */
-.form-control {
-    border-radius: 5px; /* Rounded inputs */
-    border: 1px solid #ced4da; /* Light border */
-    padding: 10px; /* Increase padding */
+/* Register Header (Gold) */
+.custom-header-gold {
+    background-color: #FAC40D;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: none;
 }
 
-/* Form Buttons */
-.btn {
+/* Button for Login (Gold) */
+.custom-button {
+    background-color: #FAC40D;
+    border: none;
+    color: #213A65;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;
     padding: 10px;
 }
 
-/* Card Footer Links */
-.card-footer a {
-    text-decoration: none;
-    font-weight: 600;
+.custom-button:hover {
+    background-color: #e6ae0c;
+    color: white;
 }
 
-.card-footer a:hover {
-    text-decoration: underline;
-    color: #0056b3; /* Bootstrap blue for hover */
-}
-
-/* Custom Spacing for Form Fields */
-.form-label {
+/* Button for Register (Dark Blue) */
+.custom-button-blue {
+    background-color: #213A65;
+    border: none;
+    color: white;
     font-weight: bold;
-    margin-bottom: 5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 10px;
 }
 
-.mb-3 {
-    margin-bottom: 1rem !important;
+.custom-button-blue:hover {
+    background-color: #192b4d;
 }
 
-/* Page Spacing */
-.container {
-    margin-top: 5rem; /* Add space at the top */
+/* Links */
+.custom-link {
+    color: #213A65;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 576px) {
-    .container {
-        margin-top: 3rem;
-    }
+.custom-link:hover {
+    color: #FAC40D;
+    text-decoration: underline;
 }
